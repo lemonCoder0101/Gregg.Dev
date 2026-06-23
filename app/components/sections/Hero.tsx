@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, Download, FolderOpen } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "../ui/SocialIcons";
+import { Mail, Download, FolderOpen } from "lucide-react";
+import { LinkedinIcon } from "../ui/SocialIcons";
+import GitHubDropdown from "../ui/GitHubDropdown";
 
 import Image from "next/image";
 import { personal } from "../../data/portfolio";
@@ -309,9 +310,8 @@ export default function Hero() {
           transition={{ delay: 0.7 }}
           style={{ display: "flex", gap: "1rem", alignItems: "center" }}
         >
+          <GitHubDropdown variant="hero" />
           {[
-            { icon: GithubIcon, href: personal.github, label: "GitHub" },
-            { icon: GithubIcon, href: personal.github2, label: "GitHub2" },
             { icon: LinkedinIcon, href: personal.linkedin, label: "LinkedIn" },
             { icon: Mail, href: `mailto:${personal.email}`, label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
@@ -354,22 +354,6 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)" }}
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            style={{ color: "var(--text-muted)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.25rem" }}
-          >
-            <span style={{ fontSize: "0.7rem", letterSpacing: "0.1em", fontFamily: "var(--font-mono)" }}>SCROLL</span>
-            <ArrowDown size={16} />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

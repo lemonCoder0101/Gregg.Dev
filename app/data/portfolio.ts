@@ -19,6 +19,7 @@ export const personal = {
   location: "Tarlac, Philippines",
   profileImage: "/profile.png",
   resumeUrl: "/resume.pdf",
+  certificatesDriveUrl: "https://drive.google.com/drive/folders/1bcjNAkJ3_ZjYkFKiS8-brhi8Uyu5Z3rj?usp=sharing",
   copyrightYear: 2026,
 };
 
@@ -35,7 +36,7 @@ export const education = [
     school: "Tarlac State University",
     specialization: "Technical Service Management",
     period: "2022 – 2026",
-    honors: "MAGNA CUM LAUDE",
+    honors: "Earned High Academic Distinction",
   },
 ];
 
@@ -185,14 +186,14 @@ export const certifications = [
     issuer: "Cisco",
     icon: "network",
     color: "cyan",
-    year: "2023",
+    year: "2024",
   },
   {
     name: "CCNA: Switching, Routing and Wireless Essentials",
     issuer: "Cisco",
     icon: "router",
     color: "blue",
-    year: "2023",
+    year: "2024",
   },
   {
     name: "Introduction to Cybersecurity",
@@ -206,14 +207,14 @@ export const certifications = [
     issuer: "Online Learning Platform",
     icon: "brain",
     color: "cyan",
-    year: "2024",
+    year: "2025",
   },
   {
     name: "IT Customer Support Basics",
     issuer: "Online Learning Platform",
     icon: "headset",
     color: "blue",
-    year: "2023",
+    year: "2026",
   },
 ];
 

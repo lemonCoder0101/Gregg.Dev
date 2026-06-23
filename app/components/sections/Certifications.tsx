@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Eye, Download, Award, FileText, AlertCircle } from "lucide-react";
+import { Eye, Download, Award, FileText, AlertCircle, ExternalLink, FolderOpen } from "lucide-react";
 import { FadeUp } from "../ui/FadeUp";
 import PdfViewerModal from "../ui/PdfViewerModal";
+import { personal } from "../../data/portfolio";
 
 interface Certificate {
   filename: string;
@@ -318,6 +319,46 @@ export default function Certifications() {
                 <CertCard key={cert.filename} cert={cert} index={i} onView={setViewingCert} />
               ))}
             </div>
+          )}
+
+          {/* View All on Google Drive CTA */}
+          {!loading && !error && (
+            <FadeUp delay={0.3}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  marginTop: "2.5rem",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "var(--text-muted)",
+                    textAlign: "center",
+                  }}
+                >
+                  Including Online Seminar &amp; Workshop Certificates
+                </p>
+                <a
+                  href={personal.certificatesDriveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  style={{
+                    padding: "0.75rem 1.75rem",
+                    fontSize: "0.9rem",
+                  }}
+                  id="cert-view-all-drive"
+                >
+                  <FolderOpen size={16} />
+                  View All Certificates
+                  <ExternalLink size={14} style={{ marginLeft: "0.25rem", opacity: 0.7 }} />
+                </a>
+              </div>
+            </FadeUp>
           )}
         </div>
       </section>
