@@ -115,7 +115,23 @@ export const experience = [
   },
 ];
 
-export const projects = [
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  features: string[];
+  github: string;
+  githubStatus: "public" | "private";
+  demo: string;
+  demoStatus: "public" | "restricted" | "none";
+  category: string;
+  screenshots: string[];
+  featured?: boolean;
+}
+
+export const projects: Project[] = [
   {
     id: "employee-evaluation",
     title: "Employee Evaluation System",
@@ -124,9 +140,22 @@ export const projects = [
     image: "/projects/evaluation.svg",
     technologies: ["React", "Node.js", "Firebase", "Tailwind CSS", "JavaScript"],
     features: ["Performance Tracking", "Score Visualization", "Employee Assessments", "HR Dashboard"],
-    github: "#",
-    demo: "#",
+    github: "",
+    githubStatus: "private" as const,
+    demo: "",
+    demoStatus: "restricted" as const,
     category: "Web App",
+    screenshots: [
+      "/projectScreenshots/EmployeeEvaluationSystem/AdminDashboard.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/EmployeeDashboard.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/EvaluationPage.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/EvaluationForm.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/Self-AssessmentForm.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/UserManagement.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/AccountRegistration.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/AccountPage.png",
+      "/projectScreenshots/EmployeeEvaluationSystem/EvalLoginPage.png",
+    ],
   },
   {
     id: "payroll",
@@ -136,10 +165,20 @@ export const projects = [
     image: "/projects/payroll.svg",
     technologies: ["React", "Node.js", "MySQL", "Tailwind CSS", "JavaScript"],
     features: ["Payroll Automation", "Attendance Tracking", "Leave Management", "Payslip Generation"],
-    github: "#",
-    demo: "#",
+    github: "",
+    githubStatus: "private" as const,
+    demo: "",
+    demoStatus: "restricted" as const,
     category: "Web App",
     featured: true,
+    screenshots: [
+      "/projectScreenshots/PayrollManagementSystem/AdminDashboard.png",
+      "/projectScreenshots/PayrollManagementSystem/PayrollPage.png",
+      "/projectScreenshots/PayrollManagementSystem/AttendancePage.png",
+      "/projectScreenshots/PayrollManagementSystem/SalaryAdjustment.png",
+      "/projectScreenshots/PayrollManagementSystem/ApplicationsPage.png",
+      "/projectScreenshots/PayrollManagementSystem/LoginPage.png",
+    ],
   },
   {
     id: "document-tracking",
@@ -147,11 +186,23 @@ export const projects = [
     description:
       "A workflow management system for monitoring document status across departments, enabling approvals, routing, and audit trails for organizational compliance.",
     image: "/projects/document-tracking.svg",
-    technologies: ["Laravel", "PHP", "MySQL", "Vue.js"],
+    technologies: ["Laravel", "PHP", "MySQL", "Vue.js", "JavaScript"],
     features: ["Workflow Monitoring", "Status Tracking", "Approval Management", "Audit Trail"],
-    github: "#",
-    demo: "#",
+    github: "",
+    githubStatus: "private" as const,
+    demo: "",
+    demoStatus: "restricted" as const,
     category: "Web App",
+    screenshots: [
+      "/projectScreenshots/DocumentTrackingSystem/AdminDashboard.png",
+      "/projectScreenshots/DocumentTrackingSystem/Dashboard.png",
+      "/projectScreenshots/DocumentTrackingSystem/DocumentPage.png",
+      "/projectScreenshots/DocumentTrackingSystem/DocumentInfo.png",
+      "/projectScreenshots/DocumentTrackingSystem/TrackedDocument.png",
+      "/projectScreenshots/DocumentTrackingSystem/RoutingHistory.png",
+      "/projectScreenshots/DocumentTrackingSystem/QR-Tracker.png",
+      "/projectScreenshots/DocumentTrackingSystem/LoginPage.png",
+    ],
   },
   {
     id: "therapease",
@@ -159,12 +210,52 @@ export const projects = [
     description:
       "An AI-augmented therapy management platform for pediatric care, enabling therapists to maintain patient records, track progress, and collaborate with parents in real-time.",
     image: "/projects/therapease.svg",
-    technologies: ["React", "Node.js", "MySQL", "Figma", "AI Integration"],
+    technologies: ["React", "Node.js", "MySQL", "Figma", "AI Integration", "JavaScript", "Tailwind CSS"],
     features: ["AI-Augmented Assessment", "Pediatric Therapy Records", "Parent-Therapist Collaboration", "Progress Tracking"],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/greggJmnz/therapease.git",
+    githubStatus: "public" as const,
+    demo: "https://therapease-tsu.vercel.app/public-website",
+    demoStatus: "public" as const,
     category: "Healthcare App",
     featured: true,
+    screenshots: [
+      "/projectScreenshots/TherapyManagementSystem/LandingPage.png",
+      "/projectScreenshots/TherapyManagementSystem/TherapistDashboard.png",
+      "/projectScreenshots/TherapyManagementSystem/PatientManagementPage.png",
+      "/projectScreenshots/TherapyManagementSystem/ScheduleManagementPage.png",
+      "/projectScreenshots/TherapyManagementSystem/ProgressTrackingPage.png",
+      "/projectScreenshots/TherapyManagementSystem/AI-InsightsPage1.png",
+      "/projectScreenshots/TherapyManagementSystem/AI-InsightsPage2.png",
+      "/projectScreenshots/TherapyManagementSystem/DailyNotesPage.png",
+      "/projectScreenshots/TherapyManagementSystem/HomeExercisePage.png",
+    ],
+  },
+  {
+    id: "cems",
+    title: "Church Event Management System",
+    description:
+      "A comprehensive, role-based management portal for local church congregations — featuring event scheduling, QR code attendance scanning, ministry oversight, and financial tracking for tithes and offerings, built with a React + Vite frontend and Node.js + Express backend on Firebase.",
+    image: "/projects/cems.svg",
+    technologies: ["React", "Vite", "Node.js", "Express", "Firebase", "JavaScript", "Tailwind CSS"],
+    features: ["Event Management", "QR Attendance", "Ministry Oversight", "Financial Tracking"],
+    github: "https://github.com/greggJmnz/CEMS.git",
+    githubStatus: "public" as const,
+    demo: "https://cems-chi.vercel.app/",
+    demoStatus: "public" as const,
+    category: "Web App",
+    featured: true,
+    screenshots: [
+      "/projectScreenshots/ChurchEventManagementSystem/AdminDashboard.png",
+      "/projectScreenshots/ChurchEventManagementSystem/MemberDashboard.png",
+      "/projectScreenshots/ChurchEventManagementSystem/EventsPage.png",
+      "/projectScreenshots/ChurchEventManagementSystem/MinistriesPage.png",
+      "/projectScreenshots/ChurchEventManagementSystem/MemberMinistryPage.png",
+      "/projectScreenshots/ChurchEventManagementSystem/MinistryInfo.png",
+      "/projectScreenshots/ChurchEventManagementSystem/AttendanceMonitoringPage.png",
+      "/projectScreenshots/ChurchEventManagementSystem/AttendanceLogs.png",
+      "/projectScreenshots/ChurchEventManagementSystem/FinancialPage.png",
+      "/projectScreenshots/ChurchEventManagementSystem/loginPage.png",
+    ],
   },
   {
     id: "banking",
@@ -174,9 +265,12 @@ export const projects = [
     image: "/projects/banking.svg",
     technologies: ["Java", "OOP", "Console UI", "File I/O"],
     features: ["Deposits", "Withdrawals", "Balance Inquiries", "Transaction History"],
-    github: "#",
-    demo: "#",
+    github: "",
+    githubStatus: "private" as const,
+    demo: "",
+    demoStatus: "none" as const,
     category: "Desktop App",
+    screenshots: [],
   },
 ];
 
