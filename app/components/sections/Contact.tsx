@@ -6,6 +6,11 @@ import { Mail, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { FadeUp } from "../ui/FadeUp";
 import { GithubIcon, LinkedinIcon } from "../ui/SocialIcons";
 import { personal } from "../../data/portfolio";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_rb2sn89";
+const EMAILJS_TEMPLATE_ID = "template_73bj9cp";
+const EMAILJS_PUBLIC_KEY = "moiU2MiUtHaQ_Z9j7";
 
 const contactLinks = [
   {
@@ -50,14 +55,24 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
 
-    // EmailJS integration — uncomment and configure to activate:
-    // import emailjs from '@emailjs/browser';
-    // await emailjs.send('SERVICE_ID', 'TEMPLATE_ID', form, 'PUBLIC_KEY');
-
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
       setStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" });
-    }, 1500);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -184,7 +199,7 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="Juan Dela Cruz"
                       className="form-field"
                     />
                   </div>
@@ -207,7 +222,7 @@ export default function Contact() {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="juan@example.com"
                       className="form-field"
                     />
                   </div>
