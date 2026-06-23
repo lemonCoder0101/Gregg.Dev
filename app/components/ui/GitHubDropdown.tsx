@@ -194,10 +194,9 @@ export default function GitHubDropdown({
                 (e.currentTarget as HTMLElement).style.background = "transparent";
               }}
             >
-              <GithubIcon
-                size={15}
-                style={{ color: "var(--text-muted)", flexShrink: 0 }}
-              />
+              <span style={{ color: "var(--text-muted)", flexShrink: 0, display: "inline-flex" }}>
+                <GithubIcon size={15} />
+              </span>
               <span style={{ flex: 1 }}>{account.label}</span>
               <ExternalLink
                 size={12}
