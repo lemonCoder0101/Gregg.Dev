@@ -120,7 +120,7 @@ export const projects = [
     description:
       "A comprehensive performance management platform enabling HR teams to conduct structured employee assessments, track KPIs, and visualize performance trends through interactive dashboards.",
     image: "/projects/evaluation.svg",
-    technologies: ["Laravel", "PHP", "MySQL", "Bootstrap", "JavaScript"],
+    technologies: ["React", "Node.js", "Firebase", "Tailwind CSS", "JavaScript"],
     features: ["Performance Tracking", "Score Visualization", "Employee Assessments", "HR Dashboard"],
     github: "#",
     demo: "#",
@@ -132,7 +132,7 @@ export const projects = [
     description:
       "An automated payroll solution that streamlines salary computation, attendance tracking, and leave management — reducing manual errors and processing time for HR departments.",
     image: "/projects/payroll.svg",
-    technologies: ["Laravel", "PHP", "MySQL", "Vue.js", "Tailwind CSS"],
+    technologies: ["React", "Node.js", "MySQL", "Tailwind CSS", "JavaScript"],
     features: ["Payroll Automation", "Attendance Tracking", "Leave Management", "Payslip Generation"],
     github: "#",
     demo: "#",
@@ -145,7 +145,7 @@ export const projects = [
     description:
       "A workflow management system for monitoring document status across departments, enabling approvals, routing, and audit trails for organizational compliance.",
     image: "/projects/document-tracking.svg",
-    technologies: ["React.js", "Node.js", "MongoDB", "Express.js"],
+    technologies: ["Laravel", "PHP", "MySQL", "Vue.js"],
     features: ["Workflow Monitoring", "Status Tracking", "Approval Management", "Audit Trail"],
     github: "#",
     demo: "#",
@@ -157,7 +157,7 @@ export const projects = [
     description:
       "An AI-augmented therapy management platform for pediatric care, enabling therapists to maintain patient records, track progress, and collaborate with parents in real-time.",
     image: "/projects/therapease.svg",
-    technologies: ["React.js", "Laravel", "MySQL", "Figma", "AI Integration"],
+    technologies: ["React", "Node.js", "MySQL", "Figma", "AI Integration"],
     features: ["AI-Augmented Assessment", "Pediatric Therapy Records", "Parent-Therapist Collaboration", "Progress Tracking"],
     github: "#",
     demo: "#",
