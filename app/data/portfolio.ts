@@ -15,6 +15,7 @@ export const personal = {
   phone: "+63 985 142 3225",
   linkedin: "https://www.linkedin.com/in/gregg-jimenez/",
   github: "https://github.com/lemonCoder0101",
+  github2: "https://github.com/greggJmnz",
   location: "Tarlac, Philippines",
   profileImage: "/profile.png",
   resumeUrl: "/resume.pdf",

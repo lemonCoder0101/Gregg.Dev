@@ -61,6 +61,7 @@ export default function Footer() {
             <div style={{ display: "flex", gap: "0.65rem", marginTop: "1.25rem" }}>
               {[
                 { icon: GithubIcon, href: personal.github, label: "GitHub" },
+                { icon: GithubIcon, href: personal.github2, label: "GitHub2" },
                 { icon: LinkedinIcon, href: personal.linkedin, label: "LinkedIn" },
                 { icon: Mail, href: `mailto:${personal.email}`, label: "Email" },
               ].map(({ icon: Icon, href, label }) => (

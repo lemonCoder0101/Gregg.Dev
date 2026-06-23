@@ -36,10 +36,19 @@ const contactLinks = [
   },
   {
     icon: GithubIcon,
-    label: "GitHub",
-    value: "github.com/gregg-jimenez",
+    label: "GitHub (lemonCoder0101)",
+    displayLabel: "GitHub",
+    value: "github.com/lemonCoder0101",
     href: personal.github,
     color: "var(--accent-purple)",
+  },
+  {
+    icon: GithubIcon,
+    label: "GitHub (greggJmnz)",
+    displayLabel: "GitHub",
+    value: "github.com/greggJmnz",
+    href: personal.github2,
+    color: "var(--accent-blue)",
   },
 ];
 
@@ -152,7 +161,7 @@ export default function Contact() {
                           marginBottom: "0.1rem",
                         }}
                       >
-                        {link.label}
+                        {("displayLabel" in link ? link.displayLabel : link.label)}
                       </p>
                       <p style={{ fontSize: "0.88rem", color: "var(--text-primary)", fontWeight: "600" }}>
                         {link.value}
